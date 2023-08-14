@@ -1,4 +1,4 @@
-package student;
+package com.wggdcode.SpringBootPractice.student;
 
 import java.time.LocalDate;
 
