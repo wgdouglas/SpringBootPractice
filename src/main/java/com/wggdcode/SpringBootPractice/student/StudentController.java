@@ -7,6 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "api/version1/student")
+@CrossOrigin // This annotation allows cross-origin requests, enabling the API to be accessed from different domains.
 public class StudentController {
     private final StudentService studentService;
 
@@ -15,12 +16,12 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping
+    @GetMapping("students/index")
     public List<Student> getStudents() {
         return studentService.getStudents();
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public void registerNewStudent(@RequestBody Student student){
         studentService.addNewStudent(student);
     }

@@ -71,7 +71,7 @@
         * Congratulations 🎊🎉🍾 At this point now you have your API and Service Layers set up and exchanging data!!!!
           **Note: next phase will be focused on the Data Access Layer in which we want o connect to an actual DB & store the students into the DB & get it back out
 
-****——> BIG NOTE: MAKE SURE THAT STUDENT PACKAGE IS INSIDE YOUR MAIN PACKAGE THAT HAS THE MAIN METHOD CLASS OR YOU WONT BE ABLE TO MAKE YOUR SERVICE CALLS
+****——> BIG NOTE: MAKE SURE THAT STUDENT PACKAGE IS INSIDE YOUR MAIN PACKAGE THAT HAS THE MAIN METHOD CLASS OR YOU WONT BE ABLE TO MAKE YOUR SERVICE CALLS****
 
 
 
@@ -85,8 +85,53 @@
 * The dialect will stay `PostgrestSQL` since that is the dependency that we’re using for the DB
 * We also do want to format the SQL so keep it as `true`
 * Now to create a DB in PostgresSQL you’ll have to go to your terminal and input the below commands:
-    * psql —> \l  —> CREATE DATABASE student; —> \du —> GRANT ALL PRIVILEGES ON  DATABASE “student” TO <first role name in column> —> GRANT ALL PRIVILEGES ON  DATABASE “student” TO <second role name in column> —> \l —> \c student —> \d
-    * The `\l` allows you to see all of your created DB’s on your local
+    * Connect to PostgreSQL: Open your terminal and connect to PostgreSQL using psql:
+      ```shell
+      psql -d postgres
+      ```
+    * Below steps 1-2 are for if you have already created a `student` PostgresSQL DB and want to create a new one
+    * Step 1: Open your terminal and type in the command to access PostgresSQL
+      ```shell
+      psql
+      ```
+    * Step 2: This will list all of the databases that you have created so far
+        ```shell 
+        \l
+        ```
+    * Step 2b: Check Existing Databases: Run the following command to list all databases:
+      * This will show all available databases. Verify if the database you want exists.
+      * Run this if you return `psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  database "aa259537" does not exist
+AB89142:SpringBootPractice User$ psql -l`
+       ```shell 
+       psql -l
+       ```
+    * Step 3: This will create a new database called `student`
+      ```shell
+      CREATE DATABASE student; 
+      ```
+    * Step 4: This will allow you to see all of the roles that you have created
+      ```shell
+      \du
+      ```
+    * Step 5: Now you want to grant all privileges to the database for the roles that you have created
+      ```shell
+      GRANT ALL PRIVILEGES ON DATABASE student TO <first role name in column>;
+      GRANT ALL PRIVILEGES ON DATABASE student TO <second role name in column>;
+      ```
+    * Step 6: List out your databases again to see that the student database has been created
+      ```shell
+      \l
+      ```
+    * Step 7: Now you can connect to the student database that you just created
+      ```shell
+      \c student
+      ```
+    * Step 8: This will show you all of the tables that you have created in your DB
+      * If you have not created any tables yet it will say `No relations found`
+      ```shell
+      \d
+      ```
+    * Remember: The `\l` allows you to see all of your created DB’s on your local
 * Now go into the pom.xml and uncomment out the starter spa, reload maven & run your application
 * Now in your your run terminal you can see the logs of how the connection went
 * Next we need to add some tables to our DB which is next chapter
