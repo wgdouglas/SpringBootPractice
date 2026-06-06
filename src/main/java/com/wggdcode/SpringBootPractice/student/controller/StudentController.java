@@ -1,5 +1,7 @@
-package com.wggdcode.SpringBootPractice.student;
+package com.wggdcode.SpringBootPractice.student.controller;
 
+import com.wggdcode.SpringBootPractice.student.Student;
+import com.wggdcode.SpringBootPractice.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,5 +1,6 @@
-package com.wggdcode.SpringBootPractice.student;
+package com.wggdcode.SpringBootPractice.student.repository;
 
+import com.wggdcode.SpringBootPractice.student.Student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

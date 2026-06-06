@@ -1,5 +1,6 @@
 > # SpringBootPractice
-~ Simple API with Spring Boot —>
+~ Simple API with Spring Boot —> video used is `Spring Boot Tutorial | Full Course [2023] [NEW]
+by amigoscode`
 
 * The goal here is to implement an endpoint so that instead of getting the `Whitelabel Error Page` we will instead get back some Json data
 * Within our main method class, we’ll add the Spring annotation of `@RestController` above the class name and under the `@SpringBootAPplication` annotation which will make this entire class now serve restful endpoints which we will add under and separate from the main method
